@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>NavBar Forever</title>
+        <!--<h:outputStylesheet library="css" name="main.css"/>-->
+    </h:head>
+    <h:body>
+
+        <b:navBar id="navBar" position="top" sticky="true" brand-img="resources\images\xlogo.png"  
+                  brand-img-style=" margin-top: -10px; width: 90% " brand-href="index.xhtml"    
+                  >                   
+             <h:form >
+                 <b:navbarLinks class="menu_brand" >
+               
+                    <b:navCommandLink  value="#{msg.home}" actionListener="#{foreverShopController.setClearSelectedProducts}" 
+                                 update="navBar :jumbotron_selected :products :menu-carousel :content-jumbotron :view_product "  
+                                rendered="#{!foreverShopController.emptySelectedProducts}" />
+                    
+                    <b:navLink  value="#{msg.about}" href="#" rendered="#{foreverShopController.emptySelectedProducts}"/>
+                
+  
+                    <ui:repeat id="menu_products" value="#{foreverShopController.sectionsList}" var="section">
+                        <b:dropMenu value="#{section.nameSectionLocale} " iconAwesome="book">   
+
+                            <ui:repeat value="#{section.categoryList}" var="category">                                                
+                                <li>
+                                    <b:commandLink   look="default" actionListener="#{foreverShopController.setSelectedProducts()}" 
+                                                     update="navBar :jumbotron_selected :products :menu-carousel :content-jumbotron :view_product " 
+                                                     style="border: none; text-align: left"  >  
+                                        <h:outputText value="#{category.name}"/>
+                                        <f:param name="section_name" value="#{section.name}" />    
+                                        <f:param name="category_id" value="#{category.id}" />
+                                         <!--update=":products :menu-carousel :content-jumbotron "-->
+                                    </b:commandLink >                            
+                                </li>                         
+                            </ui:repeat>   
+
+                        </b:dropMenu>                  
+                    </ui:repeat>                 
+                
+              
+                <b:navLink value="#{msg.contacts}" href="#"/>         
+                
+               
+                
+
+            </b:navbarLinks>
+             
+                            <b:navbarLinks styleClass="navbar-form navbar-right" style="margin-top: -1px">
+                 <b:dropMenu value="#{msg.language} " >
+                   
+                        <ui:insert name="locales_nb">
+                             <ui:include src="/templates/locales.xhtml"/>
+                        </ui:insert>
+                   
+                </b:dropMenu>
+               
+                 
+            </b:navbarLinks>
+                </h:form>
+          
+            <h:form id="form" styleClass="navbar-form navbar-right">               
+                <div class="form-group">
+                    <b:inputText placeholder="#{msg.search}" fieldSize="sm"/>
+                    <!--input type="text" class="form-control" placeholder="Search"/-->
+                </div>
+                <b:commandButton action="a" size="sm" look="success" icon="chevron-right" iconAlign="right"/>            
+               
+
+               
+            
+            
+            </h:form>
+            
+            
+      
+        </b:navBar>
+
+    </h:body>
+</html>
+

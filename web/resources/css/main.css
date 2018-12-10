@@ -1,0 +1,53 @@
+/*
+Специффикация
+*/
+body {
+ 
+}
+
+header {
+    
+  
+}
+
+.content {
+    margin-top: 80px;
+}
+
+.menu_brand, #form {
+       
+}
+
+
+
+#navBar {
+    background-color: khaki;
+    border: none;
+}
+
+footer ,  #contact {
+    background-color: khaki;
+}
+
+#selected_product{
+   
+}
+
+.short_desc {
+   
+}
+p {
+   
+    font-size:  10pt;
+}
+
+h2 {
+    font-size:  15px
+}
+
+#ee {
+     font-size:  8pt;
+}
+
+
+

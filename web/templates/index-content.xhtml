@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Index Content</title>
+    </h:head>
+    <h:body>
+        <b:scrollUp animation="Fade"  />
+     
+ 
+        
+        <b:container id="sel_product" >
+              <ui:insert name="sel_product">
+                  <ui:include src="/templates/viewProduct.xhtml"/>
+              </ui:insert>
+        </b:container>
+        
+        
+        <b:container id="jumbotron_selected"  >           
+            <b:jumbotron   rendered="#{(!foreverShopController.emptySelectedProducts and (foreverShopController.selectedProductId==null))}">
+                <b:container >
+                    <b:panelGrid columns="2" >
+                        <b:image library="images" name="about-1.png" width="45%"></b:image>
+                        
+                         <h1>#{foreverShopController.selectedCategory} </h1>
+
+                    </b:panelGrid>
+                </b:container>
+            </b:jumbotron>     
+        </b:container>
+        
+        <b:row>            
+            <h:form id="products" >               
+                <ui:repeat  id="selected_products" value="#{foreverShopController.selectedProducts}" var="product" 
+                            rendered="#{!(foreverShopController.selectedProductId>=0)}">         
+                <b:column col-sm="6" col-md="4">
+                    <b:thumbnail style="text-align: justify">
+                   
+                        <f:facet name="caption" >
+                            <h:outputLink id="image" styleClass="content_link"  target="_blank">                                                             
+                                  <p:graphicImage value="/ShowImage?index=#{product.id}"  width="240" />
+                                  <f:param name="id" value="#{product.id}"/>
+                            </h:outputLink> <br/>
+                            <h:outputText value="#{product.name}" style="font-size: 25px"/> <br/>
+                            <h:outputText value="#{product.shortDescription}" />
+                          
+                            <br/> <br/>
+                            <p:commandButton  value="#{msg.view_product}" icon="pi pi-star" style="margin-right:20px;"
+                                              actionListener="#{foreverShopController.setSelectedProduct()}" 
+                                              update="products :view_product :jumbotron_selected" 
+                                              >
+                                <!--oncomplete="scroll()"-->
+                                <f:param name="selected_product_id" value="#{product.id}" />
+                                
+                            
+                            </p:commandButton>
+                
+
+                         </f:facet>                      
+                </b:thumbnail>                
+                </b:column>                
+            </ui:repeat>
+            </h:form> 
+        </b:row>           
+                    
+                    
+    </h:body>
+</html>
+

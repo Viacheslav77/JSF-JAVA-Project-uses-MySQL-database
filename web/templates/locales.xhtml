@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+
+            <div class="lang">
+
+             
+                    <li>                
+                        <b:commandLink  value="#{msg.english}"  look="default"  
+                                        actionListener="#{localeChanger.changeLocale('en')}" style="border: none; text-align: left">
+                            <h:graphicImage styleClass="#{localeChanger.currentLocale == 'en' ? 'active':''}" library="images" name="american.png" title="#{msg.english}" 
+                                            width="16" height="13" style="margin-left: 10px; margin-top: -5px"/> 
+                        </b:commandLink>                        
+                    </li>
+          
+                    <li>
+                        <b:commandLink  value="#{msg.ukrainian}"  look="default" 
+                                        actionListener="#{localeChanger.changeLocale('uk')}" style="border: none; text-align: left">
+                            <h:graphicImage styleClass="#{localeChanger.currentLocale == 'uk' ? 'active':''}" library="images" name="ukraine.png" title="#{msg.ukrainian}" 
+                                            width="16" height="13" style="margin-left: 10px; margin-top: -5px"/> 
+                        </b:commandLink>
+                    </li>
+                    
+                    <li>
+                        <b:commandLink  value="#{msg.russian}"  look="default" 
+                                        actionListener="#{localeChanger.changeLocale('ru')}" style="border: none; text-align: left" />
+                    </li>
+               
+
+            </div>
+        </ui:composition>
+    </h:body>
+</html>
+

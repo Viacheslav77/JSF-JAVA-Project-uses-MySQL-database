@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Forever Living Shop</title>
+         <f:facet name="last">
+                <h:outputStylesheet library="css" name="main.css" />
+                <!--<h:outputScript library="js" name="library.js" target="head"/>-->
+        </f:facet>
+         <!--<h:outputStylesheet library="css" name="main.css"/>-->
+    </h:head>
+
+    <h:body>
+        
+        <header id="header">
+   
+            <b:container id="menu-navBar" >
+                <ui:insert name="menu-navBar">
+                    <ui:include src="/templates/navBar.xhtml"/>
+                </ui:insert>
+            </b:container>    
+
+        </header>
+                     
+        <section class="content" id="wer" >
+ 
+            <b:container id="content-list" >
+                <ui:insert name="content-list">
+                    <ui:include src="/templates/index-content.xhtml"/>
+                </ui:insert>
+            </b:container>
+            
+            <b:container id="menu-carousel" >
+                <ui:insert name="menu-carousel"  >
+                    <ui:include src="/templates/section-carousel.xhtml" />                                   
+                </ui:insert>
+            </b:container>
+            
+            <b:container id="content-jumbotron"  >
+                <ui:insert name="content-jumbotron" >
+                    <ui:include src="/templates/jumbotron.xhtml"/>
+                </ui:insert>
+            </b:container>
+   
+        </section>
+     
+        <!--Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-md-12 col-sm-12">
+                  <div class=" container TitleSection">
+                    <header class="page-head">
+                      <h1>Contact <small> // Us</small></h1>
+                    </header>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-md-7 col-sm-12">
+                      <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+
+                        He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections</p>
+                     Please be patient while waiting for response. (24/7 Support!) 
+                        <strong> Phone General Inquiries: 1-234-567-8910-1234</strong>
+                      <div class="contact_wrap" >
+                        <h3>Contact Form</h3>
+                        <form method="post" action="submit_now.php" id="passion_form">
+                          <div class="form-group">
+                            <input type="text" size="50" name="contactname" id="InputName" value="" class="form-control required" placeholder="Your Name*"/>
+                          </div>
+                          <div class="form-group">
+                            <input type="text" size="50" name="email" id="email" value="" class="form-control required email" placeholder="Enter Email*"/>
+                          </div>
+                          <div class="form-group">
+                            <input type="text" size="50" name="website" id="website" value="" class="form-control" placeholder="Website"/>
+                          </div>
+                          <div class="form-group">
+                            <textarea class="form-control required" rows="6" id="message"  placeholder="Your Message*"></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-md-5 col-sm-12">
+                      <div class="jumbotron">
+                        <h3>Address Info</h3>
+                        <address>
+                        <strong>Company, Inc.</strong><br/>
+                        795 Folsom Ave, Suite 600 San Francisco, CA 94107<br/>
+                        <abbr title="Phone">Tel:</abbr> (123) 456-7890<br/>
+                        <abbr title="Fax">Fax:</abbr> (123) 456-7890
+                        </address>
+                        <address>
+                        <strong>Email</strong> <a href="mailto:#">first.last@example.com</a><br/>
+                        <strong>website</strong> <a href="#page13">www.company.com</a>
+                        </address>
+                      </div>
+                      <div class="google">
+                        <h3>Find the Address</h3>
+                        <div id="map"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+<!-- /contact --> 
+        
+        
+        <footer>
+            
+            <section class="footer">
+                <div class="row">
+                  <div class="col-xs-12 col-md-9 col-sm-12">
+                    <p>Copyright copy; 2014 Coyier. All rights reserved.</p>
+                  </div>
+                  <div class="col-xs-12 col-md-3 col-sm-12">
+                    <ul class=" footer_social clearfix">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                      <li class="go_top"><a href="#top"><i class="fa fa-chevron-circle-up"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+            </section>  
+        </footer>    
+   
+
+    </h:body>
+
+</html>
