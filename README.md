@@ -4,7 +4,7 @@
  
  <h3> Server Side</h3> 
  
- Java EE technology /  GlassFish application server /  DataBase: MySQL
+ Java EE technology /  GlassFish application server /  DataBase MySQL
 
  <h3>Frontend side</h3>  
  
