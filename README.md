@@ -1,6 +1,6 @@
 # JSF-JAVA-Project-uses-MySQL-database
 
-This is a online store project that supports a multi-language interface. The store is in development. For now he can show products and their descriptions in three languages.
+This is a real online store project that supports a multi-language interface. The store is in development. For now he can show products and their descriptions in three languages.
 
 <p><b>Here you can see following things: </b></p>
  
