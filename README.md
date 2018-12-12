@@ -5,13 +5,13 @@ This is a real online store project that supports a multi-language interface. Th
 <p><b>Here you can see following things: </b></p>
  
  <h3> Server Side</h3> 
- 
- Java EE technology /  GlassFish application server /  DataBase MySQL
 
- <h3>Frontend side</h3>  
+ Java EE technology /  Facelets / JSF / PrimeFaces / BootFaces </br>
  
-Facelets / JSF / PrimeFaces / BootFaces.
+ Application server: GlassFish </br>
  
+ DataBase MySQL </br>
+  
 <p>This diagram shows the structure of my database.</p>
 
 
