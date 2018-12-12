@@ -12,7 +12,7 @@ This is a real online store project that supports a multi-language interface. Th
  
 Facelets / JSF / PrimeFaces / BootFaces.
  
-<p>This diagram shows the structure of my database. I used the principles of OOP in designing its architecture.</p>
+<p>This diagram shows the structure of my database.</p>
 
 
 
