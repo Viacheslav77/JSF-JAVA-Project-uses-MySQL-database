@@ -10,7 +10,7 @@ This is a real online store project that supports a multi-language interface. Th
  
  Application server: GlassFish </br>
  
- DataBase MySQL </br>
+ DataBase: MySQL </br>
   
 <p>This diagram shows the structure of my database.</p>
 
